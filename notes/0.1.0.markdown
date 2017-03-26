@@ -1,5 +1,0 @@
-First release. It provides the peces16s Blast DB. It is located at
-
-```
-s3://resources.ohnosequences.com/db/peces16s/
-```
