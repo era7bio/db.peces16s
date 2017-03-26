@@ -45,6 +45,9 @@ Taxon IDs for *Archaea*, *Bacteria* and the dreaded *Unclassified Bacteria* taxo
   val bacteriaTaxonID        = "2"
   val archaeaTaxonID         = "2157"
   val unclassifiedBacteriaID = "2323"
+
+  val fishTaxaIDs: Set[String] =
+    Set("fill", "this", "with", "something")
 ```
 
 These are NCBI taxonomy IDs corresponding to taxa which are at best uniformative. The `String` value is the name of the corresponding taxon, for documentation purposes.
@@ -111,13 +114,10 @@ Sequences that satisfy this predicate (on themselves together with their annotat
         case Some(ancestors) =>
 ```
 
-- is a descendant of either Archaea or Bacteria
+- is a descendant of one of the fish taxa IDs
 
 ```scala
-          ancestors.exists { ancestor =>
-            ancestor.id == archaeaTaxonID ||
-            ancestor.id == bacteriaTaxonID
-          } &&
+          ancestors.exists { ancestor => fishTaxaIDs.contains(ancestor.id) } &&
 ```
 
 - and is not a descendant of an environmental or unclassified taxon
@@ -186,14 +186,14 @@ if the sequence is OK, we partition the rows based on the predicate
 
 
 
-[main/scala/data.scala]: ../../main/scala/data.scala.md
-[main/scala/package.scala]: ../../main/scala/package.scala.md
-[test/scala/clusterSequences.scala]: clusterSequences.scala.md
-[test/scala/compats.scala]: compats.scala.md
-[test/scala/dropInconsistentAssignments.scala]: dropInconsistentAssignments.scala.md
 [test/scala/dropRedundantAssignments.scala]: dropRedundantAssignments.scala.md
+[test/scala/runBundles.scala]: runBundles.scala.md
 [test/scala/mg7pipeline.scala]: mg7pipeline.scala.md
 [test/scala/package.scala]: package.scala.md
+[test/scala/compats.scala]: compats.scala.md
+[test/scala/clusterSequences.scala]: clusterSequences.scala.md
+[test/scala/dropInconsistentAssignments.scala]: dropInconsistentAssignments.scala.md
 [test/scala/pick16SCandidates.scala]: pick16SCandidates.scala.md
 [test/scala/releaseData.scala]: releaseData.scala.md
-[test/scala/runBundles.scala]: runBundles.scala.md
+[main/scala/package.scala]: ../../main/scala/package.scala.md
+[main/scala/data.scala]: ../../main/scala/data.scala.md
