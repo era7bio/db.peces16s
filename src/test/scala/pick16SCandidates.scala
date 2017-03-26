@@ -35,6 +35,9 @@ case object pick16SCandidates extends FilterData(
   val archaeaTaxonID         = "2157"
   val unclassifiedBacteriaID = "2323"
 
+  val fishTaxaIDs: Set[String] =
+    Set("fill", "this", "with", "something")
+
   /* These are NCBI taxonomy IDs corresponding to taxa which are at best uniformative. The `String` value is the name of the corresponding taxon, for documentation purposes. */
   val uninformativeTaxIDsMap = Map(
     32644   -> "unclassified",
@@ -82,11 +85,8 @@ case object pick16SCandidates extends FilterData(
         case None => false // not in the DB
         case Some(ancestors) =>
 
-    /* - is a descendant of either Archaea or Bacteria */
-          ancestors.exists { ancestor =>
-            ancestor.id == archaeaTaxonID ||
-            ancestor.id == bacteriaTaxonID
-          } &&
+    /* - is a descendant of one of the fish taxa IDs */
+          ancestors.exists { ancestor => fishTaxaIDs.contains(ancestor.id) } &&
     /* - and is not a descendant of an environmental or unclassified taxon */
           ancestors.filter { ancestor =>
             ancestor.name == "environmental samples" ||
