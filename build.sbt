@@ -1,6 +1,6 @@
-name          := "db.rna16s"
+name          := "db.peces16s"
 organization  := "ohnosequences"
-description   := "A comprehensive, compact, and automatically curated 16S database"
+description   := "A one-off db for selected fish 16S"
 
 scalaVersion := "2.11.8"
 

@@ -1,4 +1,4 @@
-package ohnosequences.db.rna16s
+package ohnosequences.db.peces16s
 
 import ohnosequences.awstools.s3._
 
