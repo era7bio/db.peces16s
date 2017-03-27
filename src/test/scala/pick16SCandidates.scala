@@ -36,7 +36,10 @@ case object pick16SCandidates extends FilterData(
   val unclassifiedBacteriaID = "2323"
 
   val fishTaxaIDs: Set[String] =
-    Set("fill", "this", "with", "something")
+    Set(
+      "6447", // Mollusca
+      "7776"  // Gnathostomata
+    )
 
   /* These are NCBI taxonomy IDs corresponding to taxa which are at best uniformative. The `String` value is the name of the corresponding taxon, for documentation purposes. */
   val uninformativeTaxIDsMap = Map(
