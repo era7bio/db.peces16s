@@ -1,0 +1,3 @@
+# Fish 16S db
+
+This is a one-off DB for a project.
