@@ -13,7 +13,7 @@ Here is the sequence of bundles you have to launch to repeat the whole DB genera
    - Command:
 
       ```scala
-      ohnosequences.db.peces16s.test.peces16s.pick16SCandidates(your_user.AWSUser)
+      era7bio.db.peces16s.test.peces16s.pick16SCandidates(your_user.AWSUser)
       ```
       It returns you the instance ID. You have to terminate it **manually**.
 
@@ -23,19 +23,19 @@ Here is the sequence of bundles you have to launch to repeat the whole DB genera
    - Command:
 
      ```scala
-     ohnosequences.db.peces16s.test.peces16s.dropRedundantAssignmentsAndGenerate(your_user.AWSUser)
+     era7bio.db.peces16s.test.peces16s.dropRedundantAssignmentsAndGenerate(your_user.AWSUser)
      ```
      It returns you the instance ID. You have to terminate it **manually**.
 
 5. MG7:
    - First run split step
       ```scala
-      ohnosequences.db.peces16s.test.mg7.pipeline.split.deploy(your_user)
+      era7bio.db.peces16s.test.mg7.pipeline.split.deploy(your_user)
       ```
 
    - Then wait for it to finish and run BLAST
       ```scala
-      ohnosequences.db.peces16s.test.mg7.pipeline.blast.deploy(your_user)
+      era7bio.db.peces16s.test.mg7.pipeline.blast.deploy(your_user)
       ```
 
       Each loquat will offer you to subscribe to the notifications and tell you when it finished. They will terminate on success automatically.
@@ -45,7 +45,7 @@ Here is the sequence of bundles you have to launch to repeat the whole DB genera
    - Approximate run time: ~1 hour 20-40 minutes
    - Command:  
       ```scala
-      ohnosequences.db.peces16s.test.peces16s.clusterSequences(your_user.AWSUser)
+      era7bio.db.peces16s.test.peces16s.clusterSequences(your_user.AWSUser)
       ```
       It returns you the instance ID. You have to terminate it  **manually**.
 
@@ -54,7 +54,7 @@ Here is the sequence of bundles you have to launch to repeat the whole DB genera
    - Approximate run time: ~10 minutes
    - Command:  
       ```scala
-      ohnosequences.db.peces16s.test.peces16s.dropInconsistentAssignmentsAndGenerate(your_user.AWSUser)
+      era7bio.db.peces16s.test.peces16s.dropInconsistentAssignmentsAndGenerate(your_user.AWSUser)
       ```
       It returns you the instance ID. You have to terminate it  **manually**.
 
@@ -63,5 +63,5 @@ Here is the sequence of bundles you have to launch to repeat the whole DB genera
    - Approximate run time: ~1 minute
    - Command:
       ```scala
-      ohnosequences.db.peces16s.test.releaseData(your_user.AWSUser.profile)
+      era7bio.db.peces16s.test.releaseData(your_user.AWSUser.profile)
       ```
