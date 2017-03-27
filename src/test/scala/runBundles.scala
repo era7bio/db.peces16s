@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import ohnosequences.statika._, aws._
 import ohnosequences.awstools._, regions._, ec2._, autoscaling._, s3._
@@ -29,14 +29,14 @@ case object peces16s {
   }
 
   def pick16SCandidates(user: AWSUser): Seq[String] =
-    launch(ohnosequences.db.peces16s.test.compats.pick16SCandidates, r3.`2xlarge`)(user)
+    launch(era7bio.db.peces16s.test.compats.pick16SCandidates, r3.`2xlarge`)(user)
 
   def dropRedundantAssignmentsAndGenerate(user: AWSUser): Seq[String] =
-    launch(ohnosequences.db.peces16s.test.compats.dropRedundantAssignmentsAndGenerate, r3.large)(user)
+    launch(era7bio.db.peces16s.test.compats.dropRedundantAssignmentsAndGenerate, r3.large)(user)
 
   def clusterSequences(user: AWSUser): Seq[String] =
-    launch(ohnosequences.db.peces16s.test.compats.clusterSequences, r3.large)(user)
+    launch(era7bio.db.peces16s.test.compats.clusterSequences, r3.large)(user)
 
   def dropInconsistentAssignmentsAndGenerate(user: AWSUser): Seq[String] =
-    launch(ohnosequences.db.peces16s.test.compats.dropInconsistentAssignmentsAndGenerate, r3.large)(user)
+    launch(era7bio.db.peces16s.test.compats.dropInconsistentAssignmentsAndGenerate, r3.large)(user)
 }

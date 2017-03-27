@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s
+package era7bio.db.peces16s
 
 import ohnosequences.awstools.s3._
 

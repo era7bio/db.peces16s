@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import com.amazonaws.services.s3._, transfer._
 import com.amazonaws.auth._

@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import ohnosequences.statika._, aws._
 import ohnosequences.awstools._, regions._, ec2._, autoscaling._, s3._
@@ -15,14 +15,14 @@ case object compats {
   )
 
   case object pick16SCandidates extends
-    DefaultCompatible(ohnosequences.db.peces16s.test.pick16SCandidates, javaHeap = 50)
+    DefaultCompatible(era7bio.db.peces16s.test.pick16SCandidates, javaHeap = 50)
 
   case object dropRedundantAssignmentsAndGenerate extends
-    DefaultCompatible(ohnosequences.db.peces16s.test.dropRedundantAssignmentsAndGenerate, javaHeap = 10)
+    DefaultCompatible(era7bio.db.peces16s.test.dropRedundantAssignmentsAndGenerate, javaHeap = 10)
 
   case object clusterSequences extends
-    DefaultCompatible(ohnosequences.db.peces16s.test.clusterSequences, javaHeap = 10)
+    DefaultCompatible(era7bio.db.peces16s.test.clusterSequences, javaHeap = 10)
 
   case object dropInconsistentAssignmentsAndGenerate extends
-    DefaultCompatible(ohnosequences.db.peces16s.test.dropInconsistentAssignmentsAndGenerate, javaHeap = 10)
+    DefaultCompatible(era7bio.db.peces16s.test.dropInconsistentAssignmentsAndGenerate, javaHeap = 10)
 }

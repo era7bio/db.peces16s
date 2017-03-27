@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import ohnosequences.mg7._, loquats._
 import ohnosequences.datasets._, illumina._
@@ -25,7 +25,7 @@ case object mg7 {
 
   /* As the reference database we use the one generated from dropRedundantAssignments */
   case object peces16sRefDB extends ReferenceDB(
-    ohnosequences.db.peces16s.dbName,
+    era7bio.db.peces16s.dbName,
     dropRedundantAssignmentsAndGenerate.s3,
     dropRedundantAssignments.output.table.s3
   )
@@ -63,11 +63,11 @@ case object mg7 {
 
     /* As input we use the FASTA accepted by dropRedundantAssignments */
     lazy val inputSamples: Map[ID, S3Resource] = Map(
-      "refdb" -> S3Resource(ohnosequences.db.peces16s.test.dropRedundantAssignments.output.fasta.s3)
+      "refdb" -> S3Resource(era7bio.db.peces16s.test.dropRedundantAssignments.output.fasta.s3)
     )
 
     lazy val outputS3Folder: (SampleID, StepName) => S3Folder = { (_, stepName) =>
-      ohnosequences.db.peces16s.s3prefix / "mg7" / stepName /
+      era7bio.db.peces16s.s3prefix / "mg7" / stepName /
     }
 
     val splitConfig  = SplitConfig(1)

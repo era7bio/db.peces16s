@@ -1,4 +1,4 @@
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import ohnosequences.db._, csvUtils._, collectionUtils._
 import ohnosequences.fastarious.fasta._
@@ -44,7 +44,7 @@ case object clusterSequences extends Bundle(mg7BlastResults) { bundle =>
 
   lazy val name: String = "clusters"
 
-  final lazy val s3: S3Folder = ohnosequences.db.peces16s.s3prefix / name /
+  final lazy val s3: S3Folder = era7bio.db.peces16s.s3prefix / name /
   final lazy val outputName: String = name + ".csv"
 
 
