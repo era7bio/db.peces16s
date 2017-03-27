@@ -11,7 +11,7 @@ case object compats {
   class DefaultCompatible[B <: AnyBundle](bundle: B, javaHeap: Int) extends Compatible(
     amznAMIEnv(defaultAMI, javaHeap),
     bundle,
-    ohnosequences.db.generated.metadata.peces16s
+    era7bio.db.generated.metadata.peces16s
   )
 
   case object pick16SCandidates extends

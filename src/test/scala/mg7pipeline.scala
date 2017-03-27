@@ -56,7 +56,7 @@ case object mg7 {
   case object pipeline extends MG7Pipeline(parameters) {
     override lazy val name = "db-peces16s"
 
-    val metadata: AnyArtifactMetadata = ohnosequences.db.generated.metadata.peces16s
+    val metadata: AnyArtifactMetadata = era7bio.db.generated.metadata.peces16s
     // TODO: we should probably have a restricted role for this:
     val iamRoleName: String = "era7-projects"
     val logsS3Prefix: S3Folder = s3"era7-projects-loquats" /
