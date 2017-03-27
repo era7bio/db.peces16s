@@ -7,7 +7,7 @@ The output of this step represents around `5%` of the sequences in RNACentral.
 
 
 ```scala
-package ohnosequences.db.peces16s.test
+package era7bio.db.peces16s.test
 
 import ohnosequences.db._, csvUtils._, collectionUtils._
 import ohnosequences.db.rnacentral._, RNAcentral._
@@ -20,7 +20,7 @@ import better.files._
 case object pick16SCandidates extends FilterData(
   RNAcentral.table,
   RNAcentral.fasta,
-  ohnosequences.db.peces16s.s3prefix
+  era7bio.db.peces16s.s3prefix
 )(
   deps = ncbiTaxonomyBundle
 )
@@ -172,7 +172,7 @@ if the sequence is OK, we partition the rows based on the predicate
           (Seq[Row](), rows)
         }
 
-      val extendedID: String = s"gnl|${ohnosequences.db.peces16s.dbName}|${commonID}"
+      val extendedID: String = s"gnl|${era7bio.db.peces16s.dbName}|${commonID}"
 
       writeOutput(
         extendedID,

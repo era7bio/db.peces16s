@@ -1,12 +1,12 @@
 
 ```scala
-package ohnosequences.db
+package era7bio.db
 
 import ohnosequences.awstools.s3._
 
 package object peces16s {
 
-  val dbName = "ohnosequences.db.peces16s"
+  val dbName = "era7bio.db.peces16s"
 
   private val metadata = generated.metadata.peces16s
 
