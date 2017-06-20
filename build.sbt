@@ -1,6 +1,6 @@
-name          := "db.peces16s"
+name          := "db.16s18s"
 organization  := "era7bio"
-description   := "A one-off db for selected fish 16S"
+description   := "A db for 16S and 18S sequences"
 
 scalaVersion := "2.11.8"
 

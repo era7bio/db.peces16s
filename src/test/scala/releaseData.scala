@@ -1,4 +1,4 @@
-package era7bio.db.peces16s.test
+package era7bio.db.16s18s.test
 
 import com.amazonaws.services.s3._, transfer._
 import com.amazonaws.auth._
@@ -20,13 +20,13 @@ case object releaseData {
       .getOrElse(sys.error(s"Couldn't list objects in ${blastdbSource}"))
       .flatMap { obj =>
         obj.key.split('/').lastOption.map { name =>
-          obj -> (db.peces16s.data.blastDBS3 / name)
+          obj -> (db.16s18s.data.blastDBS3 / name)
         }
       }
 
     copyData(transferManager)(
-      (dropInconsistentAssignments.output.fasta.s3 -> db.peces16s.data.fastaS3) ::
-      (dropInconsistentAssignments.output.table.s3 -> db.peces16s.data.id2taxasS3) ::
+      (dropInconsistentAssignments.output.fasta.s3 -> db.16s18s.data.fastaS3) ::
+      (dropInconsistentAssignments.output.table.s3 -> db.16s18s.data.id2taxasS3) ::
       blastdbMap
     )
 

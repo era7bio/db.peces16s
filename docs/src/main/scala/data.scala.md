@@ -1,6 +1,6 @@
 
 ```scala
-package era7bio.db.peces16s
+package era7bio.db.16s18s
 
 import ohnosequences.awstools.s3._
 ```

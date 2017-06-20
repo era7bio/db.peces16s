@@ -1,3 +1,3 @@
-# db.peces16s
+# db.16s18s
 
-A database for certain 16S seqs from certain fish.
+A database for 16S and 18S seqs.

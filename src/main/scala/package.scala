@@ -2,11 +2,11 @@ package era7bio.db
 
 import ohnosequences.awstools.s3._
 
-package object peces16s {
+package object db16s18s {
 
-  val dbName = "era7bio.db.peces16s"
+  val dbName = "era7bio.db.16s18s"
 
-  private val metadata = generated.metadata.peces16s
+  private val metadata = generated.metadata.db16s18s
 
   val s3prefix: S3Folder =
     s3"resources.ohnosequences.com" /

@@ -7,7 +7,7 @@
 
   2. Then we consider each assignment `T` (from the old map) and decide wheter to drop it or keep it by comparing _its parent's_ cumulative count `Count(Parent(T))` with the total count (which is the size of `Taxa(C)`). If the difference is over some fixed threshold, we keep it, otherwise we drop it. To account for the tree topology, after this process we rescue those assignments which are descendants of a valid one (note that this process is idempotent).
 */
-package era7bio.db.peces16s.test
+package era7bio.db.16s18s.test
 
 import ohnosequences.db._, csvUtils._, collectionUtils._
 import ohnosequences.ncbitaxonomy._, titan._
@@ -140,8 +140,8 @@ case object dropInconsistentAssignments extends FilterDataFrom(dropRedundantAssi
 }
 
 case object dropInconsistentAssignmentsAndGenerate extends FilterAndGenerateBlastDB(
-  era7bio.db.peces16s.dbName,
-  era7bio.db.peces16s.test.dropInconsistentAssignments
+  era7bio.db.16s18s.dbName,
+  era7bio.db.16s18s.test.dropInconsistentAssignments
 )
 
 

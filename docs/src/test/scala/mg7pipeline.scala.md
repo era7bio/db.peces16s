@@ -1,6 +1,6 @@
 
 ```scala
-package era7bio.db.peces16s.test
+package era7bio.db.16s18s.test
 
 import ohnosequences.mg7._, loquats._
 import ohnosequences.datasets._, illumina._
@@ -32,8 +32,8 @@ case object mg7 {
 As the reference database we use the one generated from dropRedundantAssignments
 
 ```scala
-  case object peces16sRefDB extends ReferenceDB(
-    era7bio.db.peces16s.dbName,
+  case object both16s18sRefDB extends ReferenceDB(
+    era7bio.db.16s18s.dbName,
     dropRedundantAssignmentsAndGenerate.s3,
     dropRedundantAssignments.output.table.s3
   )
@@ -71,7 +71,7 @@ IMPORTANT: exclude the query from the results
   case object pipeline extends MG7Pipeline(parameters) {
     override lazy val name = "db-peces16s"
 
-    val metadata: AnyArtifactMetadata = era7bio.db.generated.metadata.peces16s
+    val metadata: AnyArtifactMetadata = era7bio.db.generated.metadata.db16s18s
     // TODO: we should probably have a restricted role for this:
     val iamRoleName: String = "era7-projects"
     val logsS3Prefix: S3Folder = s3"era7-projects-loquats" /
@@ -81,11 +81,11 @@ As input we use the FASTA accepted by dropRedundantAssignments
 
 ```scala
     lazy val inputSamples: Map[ID, S3Resource] = Map(
-      "refdb" -> S3Resource(era7bio.db.peces16s.test.dropRedundantAssignments.output.fasta.s3)
+      "refdb" -> S3Resource(era7bio.db.16s18s.test.dropRedundantAssignments.output.fasta.s3)
     )
 
     lazy val outputS3Folder: (SampleID, StepName) => S3Folder = { (_, stepName) =>
-      era7bio.db.peces16s.s3prefix / "mg7" / stepName /
+      era7bio.db.16s18s.s3prefix / "mg7" / stepName /
     }
 
     val splitConfig  = SplitConfig(1)
